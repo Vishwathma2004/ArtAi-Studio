@@ -1,12 +1,15 @@
+
 # ArtAi-Studio
 
-An AI-powered full-stack application that generates SaaS (Software-as-a-Service) product templates based on text input using modern web technologies.
+An AI-powered full-stack application that generates SaaS (Software-as-a-Service) product templates based on text input using modern web technologies.  
+Includes authentication, image uploads, user-specific data storage, and Razorpay payment gateway integration.
 
 ---
 
 ## 📌 Project Overview
 
-**ArtAi-Studio** is designed to help users convert ideas or descriptions into functional SaaS product templates with minimal effort. It features a React-based frontend, a Node.js + Express backend, and MongoDB for storage. Authentication, image uploads, and user-specific data storage are all built in.
+**ArtAi-Studio** is designed to help users convert ideas or descriptions into functional SaaS product templates with minimal effort.  
+It features a React-based frontend, a Node.js + Express backend, MongoDB for storage, JWT-based authentication, and integrated Razorpay for payment handling.
 
 ---
 
@@ -18,13 +21,14 @@ An AI-powered full-stack application that generates SaaS (Software-as-a-Service)
 | Backend   | Node.js, Express.js                  |
 | Database  | MongoDB with Mongoose                |
 | Auth      | JWT (JSON Web Tokens)                |
+| Payments  | Razorpay Payment Gateway             |
 
 ---
 
-## 📁 Folder Structure
+## 📂 Folder Structure
 
 ```plaintext
-text-to-saas/
+ArtAi-Studio/
 │
 ├── client/ # React frontend
 │   ├── src/
@@ -40,15 +44,18 @@ text-to-saas/
 ├── .gitignore
 ├── README.md
 └── package.json
-```
+````
 
-# ⚙️ Installation
+---
+
+## ⚙️ Installation
 
 ### 1️⃣ Clone the Repository
+
 ```bash
-git clone https://github.com/Vishwathma2004/ArtAi-Studio.git
+git clone https://github.com/Vishwathma2004/ArtAi-Studio
 cd ArtAi-Studio
-````
+```
 
 ### 2️⃣ Install Dependencies
 
@@ -74,6 +81,8 @@ Create a `.env` file inside the `server/` directory and add:
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_secret
 ```
 
 ### ▶️ Running the App
@@ -121,6 +130,11 @@ Uses JWT tokens for secure routes.
 * `POST /api/images/upload` – Upload image to DB
 * `GET /api/images` – Fetch all user images
 
+### Payment Routes
+
+* `POST /api/payment/create-order` – Create Razorpay order
+* `POST /api/payment/verify` – Verify payment
+
 Add `Authorization: Bearer <token>` header to protected routes.
 
 ---
@@ -131,6 +145,7 @@ Add `Authorization: Bearer <token>` header to protected routes.
 * Text-to-image and SaaS section generation
 * Secure login/register system
 * RESTful API design
+* Razorpay payment gateway integration
 * Responsive design and animations
 
 ---
@@ -153,9 +168,9 @@ This project is licensed under the **MIT License**.
 ## 🚀 Future Improvements
 
 * Deployment to Vercel / Render
-* Payment gateway integration
 * Advanced SaaS template customization
 * Admin dashboard
+* Subscription-based pricing models
 
 ---
 
@@ -164,4 +179,3 @@ This project is licensed under the **MIT License**.
 Contributions, issues, and feature requests are welcome!
 Feel free to open an issue or submit a pull request.
 
-```
